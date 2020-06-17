@@ -18,13 +18,13 @@ React Idiomatic File Structure
 ### Цель
 
 Целью этого проекта является достижение чувства
-"[until it feels right](https://react-file-structure.surge.sh/)".
+"**[until it feels right](https://react-file-structure.surge.sh/)**".
 
 ### Методология
 
 Для достижения цели будет использовано разделение на узлы (_nodes_), сущности
 (_entities_), типы (_types_) и свойства (_features_). Каждый элемент должен
-следоовать
+следовать
 [**принципу единой ответственности**](https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%B8%D0%BD%D1%86%D0%B8%D0%BF*%D0%B5%D0%B4%D0%B8%D0%BD%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D0%B9*%D0%BE%D1%82%D0%B2%D0%B5%D1%82%D1%81%D1%82%D0%B2%D0%B5%D0%BD%D0%BD%D0%BE%D1%81%D1%82%D0%B8).
 
 ## Глава 1. Наименование
@@ -136,6 +136,7 @@ export default Path;
 - Пропсы (`props`)
 - Конфигурация (`config`)
 - Модуль (`module`)
+- Тесты (`spec`)
 
 ### Стили
 
@@ -169,6 +170,13 @@ export default Path;
 статические данные, и который не зависит от происходящих вокруг него процессов.
 Например, модулем может являться файл, собирающий в себе массив роутов и
 отдающий ответственность за их поведение и расположение компоненту.
+
+### Тесты
+
+`list-item.spec.ts`
+
+Каждый узел, в идеале, должен быть покрыт unit-тестами, вынесенными в файл с
+типом `spec`.
 
 ## Глава 5. Свойства
 
@@ -233,8 +241,9 @@ export default Path;
     - `about/`
       - `contacts/`
       - `form/`
-        - `form-service/`
-          - `form.service.tsx`
+        - `form-validator/`
+          - `form-validator.service.tsx`
+          - `form-validator.spec.tsx`
           - `index.ts`
         - `form.component.tsx`
         - `form.styles.ts`
